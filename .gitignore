@@ -22,3 +22,15 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Firebase local emulators and functions
+.firebase/
+firebase-debug.log
+
+# Firebase Functions dependencies (optional if you commit functions folder separately)
+functions/node_modules/
+functions/.env
+functions/.firebase
+
+# Hosting cache (optional)
+.firebaserc
