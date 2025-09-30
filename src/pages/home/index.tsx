@@ -181,11 +181,11 @@ const Home = () => {
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 sm:mb-12 animate-fade-in"
               style={{ animationDelay: "0.3s" }}
             >
-              <button className="bg-white text-black font-bold rounded-2xl px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg transition-all hover:scale-105 hover:shadow-2xl dark:bg-white dark:text-black">
+              <button className="!bg-white !text-black font-bold rounded-2xl px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg transition-all hover:!bg-white hover:!text-black hover:scale-105 hover:shadow-2xl">
                 Get Started Now
               </button>
 
-              <button className="border-2 border-white text-black font-semibold rounded-2xl px-8 sm:px-10 py-3 sm:py-4 hover:bg-white hover:text-black text-base sm:text-lg transition-all hover:scale-105 dark:border-white dark:text-black dark:hover:bg-white dark:hover:text-black">
+              <button className="!bg-transparent !border-white !text-black font-semibold rounded-2xl px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg transition-all hover:!bg-white hover:!text-black hover:!border-white hover:scale-105">
                 View Services
               </button>
             </div>
