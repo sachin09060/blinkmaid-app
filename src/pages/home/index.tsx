@@ -6,6 +6,7 @@ import {
   HiSupport,
 } from "react-icons/hi";
 import bgClip from "../../assets/bg-video.mp4";
+import bgClip2 from "../../assets/clip.mp4";
 import {
   Carousel,
   CarouselContent,
@@ -17,7 +18,6 @@ import { Card, CardContent } from "../../components/Card/card";
 import Accordion from "../../components/Accordion/accordion";
 
 const Home = () => {
-
   const featuredServices = [
     {
       name: "Deep House Cleaning",
@@ -399,8 +399,24 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 w-full bg-gradient-to-r from-red-500 to-black text-white">
-        <div className="container mx-auto px-6 max-w-[1600px] w-full text-center">
+      <section className="py-24 w-full bg-gradient-to-r from-red-500 to-black text-white relative">
+        {/* Background Video */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src={bgClip2} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        {/* Overlay (optional darken for readability) */}
+        <div className="absolute inset-0 bg-black/50 z-5"></div>
+
+        {/* Content */}
+        <div className="container mx-auto px-6 max-w-[1600px] w-full text-center relative z-10">
           <h2 className="text-5xl lg:text-6xl font-bold mb-8 text-white animate-fade-in">
             Ready to Book Your <span className="text-[#FAEB92]">Maid?</span>
           </h2>
@@ -408,15 +424,28 @@ const Home = () => {
             Get trusted, verified professionals at your service with just one
             click.
           </p>
+
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
             <button className="bg-white text-black font-bold rounded-2xl px-12 py-5 text-xl hover:bg-gray-100 transition-all hover:scale-105">
               Book Now - Starting at ₹1,999
             </button>
-            <div className="flex items-center gap-2">
-              <HiPhone className="w-6 h-6 text-white" />
-              <span className="text-white text-lg">
-                Or call us: (555) 123-MAID
-              </span>
+
+            <div className="flex items-center gap-2 text-white text-lg">
+              <HiPhone className="w-6 h-6" />
+              <span>Or call us: (555) 123-MAID</span>
+            </div>
+          </div>
+
+          {/* Optional extra content on video */}
+          <div className="mt-8 flex justify-center gap-6">
+            <div className="bg-yellow-500 text-black px-4 py-2 rounded-lg font-semibold">
+              24/7 Availability
+            </div>
+            <div className="bg-yellow-500 text-black px-4 py-2 rounded-lg font-semibold">
+              Background Verified
+            </div>
+            <div className="bg-yellow-500 text-black px-4 py-2 rounded-lg font-semibold">
+              Trusted by 10,000+ Families
             </div>
           </div>
         </div>
