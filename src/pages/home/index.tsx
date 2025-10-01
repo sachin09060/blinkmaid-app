@@ -5,11 +5,7 @@ import {
   HiCurrencyDollar,
   HiSupport,
 } from "react-icons/hi";
-import { useEffect, useState } from "react";
-import heroMaidMain from "../../assets/maid.jpg";
-import heroService1 from "../../assets/maid2.jpg";
-import heroService2 from "../../assets/maid3.jpg";
-import heroService3 from "../../assets/maid4.png";
+import bgClip from "../../assets/bg-video.mp4";
 import {
   Carousel,
   CarouselContent,
@@ -21,16 +17,6 @@ import { Card, CardContent } from "../../components/Card/card";
 import Accordion from "../../components/Accordion/accordion";
 
 const Home = () => {
-  const [animate, setAnimate] = useState(false);
-  useEffect(() => {
-    const link = document.createElement("link");
-    link.href =
-      "https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap";
-    link.rel = "stylesheet";
-    document.head.appendChild(link);
-    const timer = setTimeout(() => setAnimate(true), 100);
-    return () => clearTimeout(timer);
-  }, []);
 
   const featuredServices = [
     {
@@ -129,6 +115,17 @@ const Home = () => {
     <div className="w-full min-h-full overflow-x-hidden text-white">
       {/* Hero Section */}
       <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-r from-red-500 to-black text-white">
+        <video
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src={bgClip} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
         {/* Floating Background Circles */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute w-12 h-12 bg-white/10 rounded-full top-2 left-8 animate-bounce"></div>
@@ -138,7 +135,7 @@ const Home = () => {
           <div className="absolute w-20 h-20 bg-white/25 rounded-full bottom-1/3 right-[36%] animate-bounce"></div>
         </div>
 
-        <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10 max-w-[1600px] w-full flex flex-col lg:flex-row items-center justify-between gap-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10 max-w-[1600px] w-full flex flex-col lg:flex-row items-center justify-between gap-8">
           {/* Text Content */}
           <div className="flex-1 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 sm:px-6 py-2 my-4 sm:my-6 text-white border border-white/30 animate-fade-in">
@@ -158,7 +155,7 @@ const Home = () => {
               </span>{" "}
               with{" "}
               <span
-                className="text-black"
+                className=""
                 style={{ fontFamily: "Times New Roman, serif" }}
               >
                 Blink<span className="text-red-500">maid</span>
@@ -185,72 +182,9 @@ const Home = () => {
                 Get Started Now
               </button>
 
-              <button className="!bg-transparent !border-white !text-black font-semibold rounded-2xl px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg transition-all hover:!bg-white hover:!text-black hover:!border-white hover:scale-105">
+              <button className="!bg-transparent !border-white !text-white font-semibold rounded-2xl px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg transition-all hover:!bg-white hover:!text-black hover:!border-white hover:scale-105">
                 View Services
               </button>
-            </div>
-          </div>
-
-          {/* Image Content */}
-          <div className="flex-1 flex justify-center lg:justify-end relative w-full max-w-md sm:max-w-lg lg:max-w-xl mb-8 lg:my-0">
-            {/* Glowing Background Effect */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-red-300/20 rounded-3xl blur-3xl transform rotate-6 scale-110 animate-pulse"></div>
-
-            {/* Main Image */}
-            <div
-              className="relative z-20 animate-fade-in"
-              style={{ animationDelay: "0.4s" }}
-            >
-              <img
-                src={heroMaidMain}
-                alt="Professional maid service"
-                className="relative w-[280px] sm:w-[320px] md:w-[360px] lg:w-[400px] h-auto object-cover rounded-3xl shadow-2xl hover:scale-105 transition-all duration-500 border-4 border-white/40"
-              />
-            </div>
-
-            {/* Floating Service Images */}
-            <div className="hidden lg:block">
-              {/* Top Left Image */}
-              <img
-                src={heroService1}
-                alt="Kitchen cleaning service"
-                className="absolute top-4 -left-20 w-36 h-36 rounded-2xl shadow-xl border-4 border-white/30 z-10 transition-all hover:scale-110 hover:rotate-3 duration-500 cursor-pointer animate-fade-in object-cover"
-                style={{
-                  animationDelay: "0.6s",
-                  transform: animate
-                    ? "translate(-2rem, -1rem) scale(1)"
-                    : "translate(0, 0) scale(0.8)",
-                  opacity: animate ? 1 : 0,
-                }}
-              />
-
-              {/* Bottom Left Image */}
-              <img
-                src={heroService2}
-                alt="Bathroom cleaning service"
-                className="absolute -bottom-8 -left-16 w-40 h-40 rounded-2xl shadow-xl border-4 border-white/30 z-10 transition-all hover:scale-110 hover:-rotate-3 duration-500 cursor-pointer animate-fade-in object-cover"
-                style={{
-                  animationDelay: "0.8s",
-                  transform: animate
-                    ? "translate(1rem, -2rem) scale(1)"
-                    : "translate(0, 0) scale(0.8)",
-                  opacity: animate ? 1 : 0,
-                }}
-              />
-
-              {/* Top Right Image */}
-              <img
-                src={heroService3}
-                alt="Living room cleaning service"
-                className="absolute -bottom-12 -left-32 w-auto h-32 rounded-2xl shadow-xl border-4 border-white/30 z-10 transition-all hover:scale-110 hover:rotate-6 duration-500 cursor-pointer animate-fade-in object-cover"
-                style={{
-                  animationDelay: "1s",
-                  transform: animate
-                    ? "translate(1rem, 2rem) scale(1)"
-                    : "translate(0, 0) scale(0.8)",
-                  opacity: animate ? 1 : 0,
-                }}
-              />
             </div>
           </div>
         </div>

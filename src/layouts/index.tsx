@@ -9,14 +9,6 @@ const socials = [
   { label: "Instagram", path: "/instagram", icon: <FaInstagram /> },
 ];
 
-const links = [
-  { label: "About Us", path: "/about" },
-  { label: "Our Services", path: "/services" },
-  { label: "Pricing", path: "/pricing" },
-  { label: "Book Now", path: "/book" },
-  { label: "Contact", path: "/contact" },
-];
-
 const Layout = () => {
   return (
     <div className="flex flex-col min-h-screen w-full overflow-x-hidden bg-gray-50">
@@ -24,7 +16,7 @@ const Layout = () => {
       <main className="flex-1 w-full">
         <Outlet />
       </main>
-      <Footer socials={socials} links={links} />
+      <Footer socials={socials} />
     </div>
   );
 };
