@@ -1,13 +1,15 @@
-import './App.css'
-import Router from './Router'
+import "./App.css";
+import { ToastProvider } from "./components/toast";
+import Router from "./Router";
 
 const App = () => {
-
   return (
     <div>
-      <Router/>
+      <ToastProvider>
+        <Router />
+      </ToastProvider>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

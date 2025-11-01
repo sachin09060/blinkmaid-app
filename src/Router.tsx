@@ -8,7 +8,8 @@ const Services = lazy(() => import("./pages/services"));
 const Pricing = lazy(() => import("./pages/pricing"));
 const About = lazy(() => import("./pages/about"));
 const Contact = lazy(() => import("./pages/contact"));
-// const Login = lazy(() => import("./pages/Login"));
+const Dashboard = lazy(() => import("./pages/dashboard"));
+const Profile = lazy(() => import("./pages/profile"));
 
 const Router = () => {
   const [loading, setLoading] = useState(true);
@@ -38,6 +39,8 @@ const Router = () => {
             <Route path="pricing" element={<Pricing />} />
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="profile" element={<Profile />} />
           </Route>
         </Routes>
       </Suspense>

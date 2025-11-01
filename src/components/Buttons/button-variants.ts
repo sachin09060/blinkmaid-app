@@ -5,16 +5,30 @@ export const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+        // 🔴 Primary button (red)
+        default:
+          "bg-red-600 text-white hover:bg-red-700 active:bg-red-800 focus:ring-red-400",
+
+        // ⚫ Secondary button (black)
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
+          "bg-black text-white hover:bg-gray-900 active:bg-gray-950 focus:ring-gray-700",
+
+        // ⚠️ Destructive (error action)
+        destructive:
+          "bg-rose-600 text-white hover:bg-rose-700 active:bg-rose-800 focus:ring-rose-400",
+
+        // 🩶 Outline button
+        outline:
+          "border border-gray-300 bg-white text-gray-800 hover:bg-gray-100 active:bg-gray-200",
+
+        // 👻 Ghost (subtle)
+        ghost:
+          "bg-transparent text-gray-800 hover:bg-gray-100 active:bg-gray-200",
+
+        // 🔗 Link-style button
+        link: "text-red-600 underline-offset-4 hover:underline",
       },
+
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-md px-3",
@@ -22,9 +36,10 @@ export const buttonVariants = cva(
         icon: "h-10 w-10",
       },
     },
+
     defaultVariants: {
       variant: "default",
       size: "default",
     },
-  },
+  }
 );
